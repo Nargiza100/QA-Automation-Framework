@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     testImplementation 'org.testng:testng:7.6.1'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.5.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.5.3'
 }
 
 test {
@@ -19,9 +19,30 @@ test {
         suites "src/test/resources/TestNG.xml"
     }
 }
-
-task testHW18(type: Test) {
-    useTestNG() {
+task (type: Test) {
+     useTestNG() {
         suites "src/test/resources/Homework18.xml"
+     }
+}
+task(type:Test){
+        useTestNG() {
+            suites "src/test/resources/TestingMethodAddsong.xml"
+        }
+}
+task(type:Test){
+    useTestNG() {
+        suites "src/test/resources/regressionSuite.xml"
     }
 }
+task(type:Test){
+    useTestNG() {
+        suites "src/test/resources/smokeSuite.xml"
+
+    }
+}
+task(type:Test){
+        useTestNG() {
+            suites "src/test/resources/TestingMethodAddsong.xml"
+        }
+}
+
